@@ -1,0 +1,21 @@
+{
+    "name": "CS POI AR App",
+    "short_name": "cspoiarapp",
+    "description": "Point of interest AR Web App, developed using AR.js and A-Frame.",
+    "icons": [
+        {
+            "src": "assets/icon192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "display":  "fullscreen",
+    "theme_color" : "#87CEEB",
+    "background_color": "#e6e6e6"
+}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cap of coffee
+* source:	https://sketchfab.com/3d-models/cap-of-coffee-be2374c71e6347cfba1114267ada8bac
+* author:	Polina (https://sketchfab.com/arhona)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cap of coffee" (https://sketchfab.com/3d-models/cap-of-coffee-be2374c71e6347cfba1114267ada8bac) by Polina (https://sketchfab.com/arhona) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -20,7 +20,7 @@ self.addEventListener("activate", (ev) => {
 });
 
 self.addEventListener("fetch", (ev) => {
-  console.log(`Service worker intercepted: ${ev.request.url}`);
+  //console.log(`Service worker intercepted: ${ev.request.url}`);
   const url = new URL(ev.request.url);
 
   ev.respondWith(

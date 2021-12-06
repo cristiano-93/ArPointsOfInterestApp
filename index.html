@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <!-- note version 1 -->
+  <!-- note version 2 -->
   <head>
     <meta charset="utf-8" />
     <title>Immersive Tech AR App</title>
@@ -27,7 +27,8 @@
     </style>
   </head>
   <body>
-    <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
+    <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;" 
+    cursor='rayOrigin: mouse' raycaster='near:0.1; far: 300'>
       <!-- <div style="position: fixed; top: 10px; width: 100%; text-align: center; z-index: 1">
       <button id="btn1">Restaurant's</button>
     </div> -->

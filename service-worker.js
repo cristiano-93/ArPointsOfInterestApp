@@ -1,6 +1,8 @@
 const CACHE_NAME = "cache";
-const urlsToCache = ["/ImmersiveTechArPoiApp/index.htmlindex.html", //testing different url
-  "dist/bundle.js"];
+const urlsToCache = [
+  "index.html",
+  "dist/bundle.js"
+];
 
 self.addEventListener("install", (ev) => {
   console.log("Installed the service worker...");

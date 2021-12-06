@@ -31,7 +31,7 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("./service-worker.js")
     .then((registration) => {
-      console.log("Registered successfully.");
+      console.log("Service Worker Registered successfully.");
     })
     .catch((e) => {
       console.error(`Service worker registration failed: ${e}`);
@@ -62,93 +62,93 @@ AFRAME.registerComponent("poifinder", {
       console.log("osm data loaded");
 
       e.detail.pois.forEach((poi) => {
-        console.log(poi);
-        if (poi.properties.amenity == "cafe") {
-          const cafeText = document.createElement("a-text");
-          const coffee = document.createElement("a-entity");
-          const cafeEntity = document.createElement("a-entity");
+        //console.log(poi);
+          if (poi.properties.amenity == "cafe") {
+            const cafeText = document.createElement("a-text");
+            const coffee = document.createElement("a-entity");
+            const cafeEntity = document.createElement("a-entity");
 
-          cafeEntity.setAttribute("gps-projected-entity-place", {
-            latitude: poi.geometry.coordinates[1],
-            longitude: poi.geometry.coordinates[0],
-          });
+            cafeEntity.setAttribute("gps-projected-entity-place", {
+              latitude: poi.geometry.coordinates[1],
+              longitude: poi.geometry.coordinates[0],
+            });
 
-          coffee.setAttribute("gltf-model", "./assets/cap_of_coffee/scene.gltf");
-          coffee.setAttribute("scale", "1 1 1");
-          coffee.setAttribute("animation", {
-            property: "rotation",
-            to: "0 360 0",
-            loop: true,
-            dur: 6000,
-          });
+            coffee.setAttribute("gltf-model", "./assets/cap_of_coffee/scene.gltf");
+            coffee.setAttribute("scale", "1 1 1");
+            coffee.setAttribute("animation", {
+              property: "rotation",
+              to: "0 360 0",
+              loop: true,
+              dur: 6000,
+            });
 
-          cafeText.setAttribute("scale", "20 20 20");
-          cafeText.setAttribute("look-at", "[gps-projected-camera]");
-          cafeText.setAttribute("position", "0 30 0");
-          cafeText.setAttribute("align", "center");
-          cafeText.setAttribute("value", poi.properties.name || "Name missing");
+            cafeText.setAttribute("scale", "20 20 20");
+            cafeText.setAttribute("look-at", "[gps-projected-camera]");
+            cafeText.setAttribute("position", "0 30 0");
+            cafeText.setAttribute("align", "center");
+            cafeText.setAttribute("value", poi.properties.name || "Name missing");
 
-          cafeEntity.appendChild(cafeText);
-          cafeEntity.appendChild(coffee);
-          this.el.sceneEl.appendChild(cafeEntity);
-        } else if (poi.properties.amenity == "restaurant") {
-          const restaurantText = document.createElement("a-text");
-          const hotdog = document.createElement("a-entity");
-          const restaurantEntity = document.createElement("a-entity");
+            cafeEntity.appendChild(cafeText);
+            cafeEntity.appendChild(coffee);
+            this.el.sceneEl.appendChild(cafeEntity);
+          } else if (poi.properties.amenity == "restaurant") {
+            const restaurantText = document.createElement("a-text");
+            const hotdog = document.createElement("a-entity");
+            const restaurantEntity = document.createElement("a-entity");
 
-          restaurantEntity.setAttribute("gps-projected-entity-place", {
-            latitude: poi.geometry.coordinates[1],
-            longitude: poi.geometry.coordinates[0],
-          });
+            restaurantEntity.setAttribute("gps-projected-entity-place", {
+              latitude: poi.geometry.coordinates[1],
+              longitude: poi.geometry.coordinates[0],
+            });
 
-          hotdog.setAttribute("gltf-model", "./assets/hotdog/scene.gltf");
-          hotdog.setAttribute("scale", "0.1 0.1 0.1");
-          hotdog.setAttribute("rotation", "0 0 30");
-          hotdog.setAttribute("animation", {
-            property: "rotation",
-            to: "0 360 30",
-            loop: true,
-            dur: 8000, //check with Nick on why the animation is not smooth
-          });
+            hotdog.setAttribute("gltf-model", "./assets/hotdog/scene.gltf");
+            hotdog.setAttribute("scale", "0.1 0.1 0.1");
+            hotdog.setAttribute("rotation", "0 0 30");
+            hotdog.setAttribute("animation", {
+              property: "rotation",
+              to: "0 360 30",
+              loop: true,
+              dur: 8000, //check with Nick on why the animation is not smooth
+            });
 
-          restaurantText.setAttribute("scale", "20 20 20");
-          restaurantText.setAttribute("look-at", "[gps-projected-camera]");
-          restaurantText.setAttribute("position", "0 30 0");
-          restaurantText.setAttribute("align", "center");
-          restaurantText.setAttribute("value", poi.properties.name || "Name missing");
+            restaurantText.setAttribute("scale", "20 20 20");
+            restaurantText.setAttribute("look-at", "[gps-projected-camera]");
+            restaurantText.setAttribute("position", "0 30 0");
+            restaurantText.setAttribute("align", "center");
+            restaurantText.setAttribute("value", poi.properties.name || "Name missing");
 
-          restaurantEntity.appendChild(restaurantText);
-          restaurantEntity.appendChild(hotdog);
-          this.el.sceneEl.appendChild(restaurantEntity);
-        } else if (poi.properties.amenity == "pub") {
-          const pubText = document.createElement("a-text");
-          const beer = document.createElement("a-entity");
-          const pubEntity = document.createElement("a-entity");
+            restaurantEntity.appendChild(restaurantText);
+            restaurantEntity.appendChild(hotdog);
+            this.el.sceneEl.appendChild(restaurantEntity);
+          } else if (poi.properties.amenity == "pub") {
+            const pubText = document.createElement("a-text");
+            const beer = document.createElement("a-entity");
+            const pubEntity = document.createElement("a-entity");
 
-          pubEntity.setAttribute("gps-projected-entity-place", {
-            latitude: poi.geometry.coordinates[1],
-            longitude: poi.geometry.coordinates[0],
-          });
+            pubEntity.setAttribute("gps-projected-entity-place", {
+              latitude: poi.geometry.coordinates[1],
+              longitude: poi.geometry.coordinates[0],
+            });
 
-          beer.setAttribute("gltf-model", "./assets/beer_can/scene.gltf");
-          beer.setAttribute("scale", "10 10 10");
-          beer.setAttribute("animation", {
-            property: "rotation",
-            to: "0 360 0",
-            loop: true,
-            dur: 6000, //check with Nick on why the animation is not smooth
-          });
+            beer.setAttribute("gltf-model", "./assets/beer_can/scene.gltf");
+            beer.setAttribute("scale", "10 10 10");
+            beer.setAttribute("animation", {
+              property: "rotation",
+              to: "0 360 0",
+              loop: true,
+              dur: 6000, //check with Nick on why the animation is not smooth
+            });
 
-          pubText.setAttribute("scale", "20 20 20");
-          pubText.setAttribute("look-at", "[gps-projected-camera]");
-          pubText.setAttribute("position", "0 30 0");
-          pubText.setAttribute("align", "center");
-          pubText.setAttribute("value", poi.properties.name || "Name missing");
+            pubText.setAttribute("scale", "20 20 20");
+            pubText.setAttribute("look-at", "[gps-projected-camera]");
+            pubText.setAttribute("position", "0 30 0");
+            pubText.setAttribute("align", "center");
+            pubText.setAttribute("value", poi.properties.name || "Name missing");
 
-          pubEntity.appendChild(pubText);
-          pubEntity.appendChild(beer);
-          this.el.sceneEl.appendChild(pubEntity);
-        }
+            pubEntity.appendChild(pubText);
+            pubEntity.appendChild(beer);
+            this.el.sceneEl.appendChild(pubEntity);
+          }
       });
     });
   },

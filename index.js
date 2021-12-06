@@ -9,7 +9,6 @@ import "aframe-mouse-cursor-component";
 // is this needed 'const url = new URL...' in serviceworker.js
 //
 // Notes
-// hello
 // add link to website (lower case) when selected
 //
 // add attribution???
@@ -40,18 +39,6 @@ if ("serviceWorker" in navigator) {
 } else {
   alert("Sorry, offline functionality not available, please update your browser!");
 }
-// if ("serviceWorker" in navigator) {
-//   navigator.serviceWorker
-//     .register("./service-worker.js")
-//     .then((registration) => {
-//       console.log("Registered successfully.");
-//     })
-//     .catch((e) => {
-//       console.error(`Service worker registration failed: ${e}`);
-//     });
-// } else {
-//   alert("Sorry, offline functionality not available, please update your browser!");
-// }
 
 AFRAME.registerComponent("poifinder", {
   init: function () {
@@ -94,13 +81,6 @@ AFRAME.registerComponent("poifinder", {
             loop: true,
             dur: 6000,
           });
-          cafeEntity.setAttribute("event-set__click", {
-            scale: "3 3 3",
-          });
-          // coffee.setAttribute("event-set__2", {
-          //   _event: "click",
-          //   scale: "20 20 20",
-          // });
 
           cafeText.setAttribute("scale", "20 20 20");
           cafeText.setAttribute("look-at", "[gps-projected-camera]");

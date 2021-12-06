@@ -7,12 +7,21 @@ import "aframe-mouse-cursor-component";
 
 // Questions
 // is this needed 'const url = new URL...' in serviceworker.js
+// ask Nick what exactly should we be doing with indexeddb
 //
 // Notes
 // 
 //
 // add attribution???
 //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+//
+//
+// To Do
+// IndexedDb?
+// report
+// add atributioni to report and code commented
+// 
+
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
@@ -39,8 +48,8 @@ AFRAME.registerComponent("poifinder", {
           lat: e.detail.position.latitude,
           lon: e.detail.position.longitude,
         });
-        document.getElementById("lon").innerHTML = "Longitude: " + e.detail.position.longitude.toFixed(10);
-        document.getElementById("lat").innerHTML = "Latitude: " + e.detail.position.latitude.toFixed(10);
+        document.getElementById("lon").innerHTML = "Longitude: " + e.detail.position.longitude.toFixed(9);
+        document.getElementById("lat").innerHTML = "Latitude: " + e.detail.position.latitude.toFixed(9);
       }
     });
 

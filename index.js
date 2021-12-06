@@ -165,7 +165,7 @@ AFRAME.registerComponent("clicker", {
   },
   init: function () {
     this.el.addEventListener("click", (e) => {
-      alert(`Opening "${this.data.name}" website with the following url: \n ${this.data.website}`);
+      confirm(`Opening "${this.data.name}" website with the following url: \n ${this.data.website}`);
       window.open(`${this.data.website}`);
     });
   },

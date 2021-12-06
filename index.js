@@ -14,19 +14,6 @@ import "aframe-mouse-cursor-component";
 // add attribution???
 //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-// click events
-// entity1.setAttribute("event-set__2", {
-//   _event: "mouseenter",
-//   scale: "0.3 0.3 0.3",
-// });
-// entity1.setAttribute("event-set__mouseleave", {
-//   scale: "0.2 0.2 0.2",
-// // });
-// entity.setAttribute("event-set__1", {
-//   _event: "click",
-//   scale: "0.3 0.3 0.3",
-// });
-
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("./service-worker.js")

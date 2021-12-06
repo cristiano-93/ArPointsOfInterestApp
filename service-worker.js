@@ -1,8 +1,7 @@
 const CACHE_NAME = "cache";
 const urlsToCache = [
   "index.html",
-  "dist/bundle.js",
-  "/"
+  "dist/bundle.js"
 ];
 
 self.addEventListener("install", (ev) => {

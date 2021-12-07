@@ -5,7 +5,7 @@
     "aframe-event-set-component": "^5.0.0",
     "aframe-look-at-component": "^1.0.0",
     "aframe-mouse-cursor-component": "^0.5.3",
-    "aframe-osm-3d": "^0.5.1",
+    "aframe-osm-3d": "^0.5.2",
     "node-polyfill-webpack-plugin": "^1.1.4"
   },
   "devDependencies": {

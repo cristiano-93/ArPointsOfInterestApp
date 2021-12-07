@@ -17,7 +17,7 @@ import "aframe-mouse-cursor-component";
 //
 //
 // To Do
-// IndexedDb?
+// fix the dam buttons
 // report
 // add atributions to report and code commented
 // 

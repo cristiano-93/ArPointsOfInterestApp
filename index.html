@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <!-- note version 6 -->
+  <!-- note version 8 -->
   <head>
     <meta charset="utf-8" />
     <title>Immersive Tech AR App</title>
@@ -10,9 +10,9 @@
       #filterDiv {
         position: absolute;
         z-index: 2;
-        left: 40%;
-        right: 40%;
-        bottom: 5%;
+        left: 45%;
+        right: 50%;
+        bottom: 1%;
       }
       #filters {
         position: absolute;
@@ -20,11 +20,15 @@
         left: 20%;
         right: 20%;
         bottom: 1%;
+        visibility: hidden;
       }
       button {
         border-radius: 20;
         background-color: #99ccff;
         opacity: 0.8;
+      }
+      #filterBtn{
+        background-color: #70db70;
       }
       #locationBg {
         position: absolute;
@@ -77,7 +81,7 @@
       ></a-entity>
     </a-scene>
     <script>
-      let visible = false;
+      let visible = true;
       function hide() {
         if (visible == true) {
           document.getElementById("filters").style.visibility = "visible";

@@ -19,7 +19,7 @@ import "aframe-mouse-cursor-component";
 // To Do
 // IndexedDb?
 // report
-// add atributioni to report and code commented
+// add atributions to report and code commented
 // 
 
 

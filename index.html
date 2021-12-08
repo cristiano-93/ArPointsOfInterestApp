@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <!-- note version 3 -->
+  <!-- note version 4 -->
   <head>
     <meta charset="utf-8" />
     <title>Immersive Tech AR App</title>
@@ -56,6 +56,7 @@
     <a-scene
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+      renderer="antialias: true; alpha: true; logarithmicDepthBuffer: true"
       cursor="rayOrigin: mouse"
       raycaster="near:0.1; far: 300"
     >

@@ -10,17 +10,14 @@
       #filterDiv {
         position: absolute;
         z-index: 2;
-        left: 45%;
-        right: 50%;
+        margin-left: 1%;
+        margin-right: auto;
         bottom: 1%;
       }
       #filters {
         position: absolute;
-        /* left: 15%;
-        right: 15%; */
-        margin-left: 30%;
-        margin-right: 30%;
-        width: 40%;
+        left: 15%;
+        right: 1%;
         border: red;
         z-index: 3;
         bottom: 1%;
@@ -93,11 +90,9 @@
       function hide() {
         if (visible == true) {
           document.getElementById("filters").style.visibility = "visible";
-          document.getElementById('filterDiv').style.bottom = '5%';
           visible = false;
         } else if (visible == false) {
-          document.getElementById("filters").style.visibility = "hidden";
-          document.getElementById('filterDiv').style.bottom = '1%';          
+          document.getElementById("filters").style.visibility = "hidden";   
           visible = true;
         }
       }

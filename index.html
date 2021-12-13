@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <!-- note version 4 -->
+  <!-- note version 8 -->
   <head>
     <meta charset="utf-8" />
     <title>Immersive Tech AR App</title>
@@ -16,8 +16,12 @@
       }
       #filters {
         position: absolute;
-        left: 15%;
-        right: 15%;
+        /* left: 15%;
+        right: 15%; */
+        margin-left: 30%;
+        margin-right: 30%;
+        width: 40%;
+        border: red;
         z-index: 3;
         bottom: 1%;
         visibility: hidden;
@@ -77,7 +81,7 @@
         <button id="pubBtn">Pub's</button>
       </div>
 
-      <a-camera gps-projected-camera rotation-reader position="0 1.6 0"></a-camera>
+      <a-camera gps-projected-camera rotation-reader look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera="gpsMinDistance: 10" wasd-controls="acceleration: 500" position="0 1.6 0"></a-camera>
       <a-entity
         terrarium-dem="zoom: 15; url: https://hikar.org/webapp/dem/{z}/{x}/{y}.png"
         osm3d="url: https://hikar.org/webapp/map/{z}/{x}/{y}.json?outProj=4326" emitRawData='true' renderRoads='false'

@@ -2,7 +2,6 @@ import "aframe";
 import "@ar-js-org/ar.js";
 import "aframe-look-at-component";
 import "aframe-osm-3d";
-import "aframe-event-set-component";
 import "aframe-mouse-cursor-component";
 
 // Questions
@@ -10,7 +9,10 @@ import "aframe-mouse-cursor-component";
 // ask Nick what exactly should we be doing with indexeddb
 //
 // Notes
-// 
+//
+// improve the text names
+//
+// test the arjs-look-controls smoothing factor
 //
 // add attribution???
 //<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
@@ -20,8 +22,7 @@ import "aframe-mouse-cursor-component";
 // fix the dam buttons
 // report
 // add atributions to report and code commented
-// 
-
+//
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
@@ -35,11 +36,12 @@ if ("serviceWorker" in navigator) {
 } else {
   alert("Sorry, offline functionality not available, please update your browser!");
 }
+let show = false;
 
 AFRAME.registerComponent("poifinder", {
   init: function () {
-    this.camera = document.querySelector("[camera]");
     this.loaded = false;
+    this.camera = document.querySelector("[camera]");
 
     // Handling the GPS update
     window.addEventListener("gps-camera-update-position", (e) => {
@@ -79,16 +81,24 @@ AFRAME.registerComponent("poifinder", {
 
           cafeText.setAttribute("scale", "20 20 20");
           cafeText.setAttribute("look-at", "[gps-projected-camera]");
-          cafeText.setAttribute("position", "0 30 0");
+          cafeText.setAttribute("position", "0 15 0");
           cafeText.setAttribute("align", "center");
           cafeText.setAttribute("value", poi.properties.name || "Name missing");
-
-          cafeEntity.appendChild(cafeText);
-          cafeEntity.appendChild(coffee);
 
           if (poi.properties.website) {
             cafeEntity.setAttribute("clicker", { name: poi.properties.name, website: poi.properties.website });
           }
+
+          cafeEntity.appendChild(cafeText);
+          cafeEntity.appendChild(coffee);
+          
+          document.getElementById("cafeBtn").addEventListener("click", function (e) {
+            if (cafeEntity.getAttribute("visible")) {
+              cafeEntity.setAttribute("visible", false);
+            } else {
+              cafeEntity.setAttribute("visible", true);
+            }
+          });
 
           this.el.sceneEl.appendChild(cafeEntity);
         } else if (poi.properties.amenity == "restaurant") {
@@ -108,12 +118,12 @@ AFRAME.registerComponent("poifinder", {
             property: "rotation",
             to: "0 360 30",
             loop: true,
-            dur: 8000, //check with Nick on why the animation is not smooth
+            dur: 8000,
           });
 
           restaurantText.setAttribute("scale", "20 20 20");
           restaurantText.setAttribute("look-at", "[gps-projected-camera]");
-          restaurantText.setAttribute("position", "0 30 0");
+          restaurantText.setAttribute("position", "0 15 0");
           restaurantText.setAttribute("align", "center");
           restaurantText.setAttribute("value", poi.properties.name || "Name missing");
 
@@ -123,6 +133,15 @@ AFRAME.registerComponent("poifinder", {
           if (poi.properties.website) {
             restaurantEntity.setAttribute("clicker", { name: poi.properties.name, website: poi.properties.website });
           }
+
+          document.getElementById("restaurantsBtn").addEventListener("click", function (e) {
+            if (restaurantEntity.getAttribute("visible")) {
+              restaurantEntity.setAttribute("visible", false);
+            } else {
+              restaurantEntity.setAttribute("visible", true);
+            }
+          });
+
           this.el.sceneEl.appendChild(restaurantEntity);
         } else if (poi.properties.amenity == "pub") {
           const pubText = document.createElement("a-text");
@@ -140,12 +159,12 @@ AFRAME.registerComponent("poifinder", {
             property: "rotation",
             to: "0 360 0",
             loop: true,
-            dur: 6000, //check with Nick on why the animation is not smooth
+            dur: 6000,
           });
 
           pubText.setAttribute("scale", "20 20 20");
           pubText.setAttribute("look-at", "[gps-projected-camera]");
-          pubText.setAttribute("position", "0 30 0");
+          pubText.setAttribute("position", "0 15 0");
           pubText.setAttribute("align", "center");
           pubText.setAttribute("value", poi.properties.name || "Name missing");
 
@@ -155,6 +174,15 @@ AFRAME.registerComponent("poifinder", {
           if (poi.properties.website) {
             pubEntity.setAttribute("clicker", { name: poi.properties.name, website: poi.properties.website });
           }
+
+          document.getElementById("pubBtn").addEventListener("click", function (e) {
+            if (pubEntity.getAttribute("visible")) {
+              pubEntity.setAttribute("visible", false);
+            } else {
+              pubEntity.setAttribute("visible", true);
+            }
+          });
+
           this.el.sceneEl.appendChild(pubEntity);
         }
       });

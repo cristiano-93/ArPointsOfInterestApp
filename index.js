@@ -50,8 +50,8 @@ AFRAME.registerComponent("poifinder", {
           lat: e.detail.position.latitude,
           lon: e.detail.position.longitude,
         });
-        document.getElementById("lon").innerHTML = "Longitude: " + e.detail.position.longitude.toFixed(9);
-        document.getElementById("lat").innerHTML = "Latitude: " + e.detail.position.latitude.toFixed(9);
+        document.getElementById("lon").innerHTML = "Longitude: " + e.detail.position.longitude.toFixed(7);
+        document.getElementById("lat").innerHTML = "Latitude: " + e.detail.position.latitude.toFixed(7);
       }
     });
 

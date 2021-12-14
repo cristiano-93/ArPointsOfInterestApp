@@ -89,23 +89,12 @@ AFRAME.registerComponent("poifinder", {
 
           cafeEntity.appendChild(cafeText);
           cafeEntity.appendChild(coffee);
-          
+
           document.getElementById("cafeBtn").addEventListener("click", function (e) {
-            
-            // if (document.getElementById("cafeBtn").className === 'showing') {
-            //   document.getElementById("cafeBtn").style.visibility = 'hidden'
-            //   document.getElementById("cafeBtn").className = "hidden";
-            // } else {
-            //   document.getElementById("cafeBtn").style.visibility = 'visible';
-            //   document.getElementById("cafeBtn").className = 'showing';
-            // } 
-            
-            if (cafeEntity.getAttribute("visible")==true) {
+            if (cafeEntity.getAttribute("visible") == true) {
               cafeEntity.setAttribute("visible", false);
-              console.log('filter cafe')
             } else {
               cafeEntity.setAttribute("visible", true);
-              console.log('non-filter cafe')
             }
           });
 

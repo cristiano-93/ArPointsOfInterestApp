@@ -35,7 +35,6 @@ if ("serviceWorker" in navigator) {
 } else {
   alert("Sorry, offline functionality not available, please update your browser!");
 }
-let show = false;
 
 AFRAME.registerComponent("poifinder", {
   init: function () {
@@ -92,10 +91,21 @@ AFRAME.registerComponent("poifinder", {
           cafeEntity.appendChild(coffee);
           
           document.getElementById("cafeBtn").addEventListener("click", function (e) {
-            if (cafeEntity.getAttribute("visible")) {
+            
+            // if (document.getElementById("cafeBtn").className === 'showing') {
+            //   document.getElementById("cafeBtn").style.visibility = 'hidden'
+            //   document.getElementById("cafeBtn").className = "hidden";
+            // } else {
+            //   document.getElementById("cafeBtn").style.visibility = 'visible';
+            //   document.getElementById("cafeBtn").className = 'showing';
+            // } 
+            
+            if (cafeEntity.getAttribute("visible")==true) {
               cafeEntity.setAttribute("visible", false);
+              console.log('filter cafe')
             } else {
               cafeEntity.setAttribute("visible", true);
+              console.log('non-filter cafe')
             }
           });
 

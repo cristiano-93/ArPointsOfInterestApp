@@ -1,6 +1,6 @@
 <!DOCTYPE html>
+<!-- version note: final -->
 <html>
-  <!-- note version 8 -->
   <head>
     <meta charset="utf-8" />
     <title>Immersive Tech AR App</title>
@@ -30,7 +30,7 @@
         height: 30px;
         border-radius: 10px;
       }
-      #filterBtn{
+      #filterBtn {
         background-color: #70db70;
       }
       #locationBg {
@@ -60,9 +60,6 @@
       cursor="rayOrigin: mouse"
       raycaster="near:0.1; far: 300"
     >
-      <!-- <div style="position: fixed; top: 10px; width: 100%; text-align: center; z-index: 1">
-      <button id="btn1">Restaurant's</button>
-    </div> -->
       <div id="locationBg"></div>
       <div id="location">
         <p id="lon">-</p>
@@ -77,10 +74,20 @@
         <button class="showing" id="pubBtn">Pub's</button>
       </div>
 
-      <a-camera gps-projected-camera rotation-reader look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera="gpsMinDistance: 10" wasd-controls="acceleration: 500" position="0 1.6 0"></a-camera>
+      <a-camera
+        gps-projected-camera
+        rotation-reader
+        look-controls-enabled="false"
+        arjs-look-controls="smoothingFactor: 0.1"
+        gps-camera="gpsMinDistance: 10"
+        wasd-controls="acceleration: 500"
+        position="0 1.6 0"
+      ></a-camera>
       <a-entity
         terrarium-dem="zoom: 15; url: https://hikar.org/webapp/dem/{z}/{x}/{y}.png"
-        osm3d="url: https://hikar.org/webapp/map/{z}/{x}/{y}.json?outProj=4326" emitRawData='true' renderRoads='false'
+        osm3d="url: https://hikar.org/webapp/map/{z}/{x}/{y}.json?outProj=4326"
+        emitRawData="true"
+        renderRoads="false"
         poifinder
       ></a-entity>
     </a-scene>
@@ -91,7 +98,7 @@
           document.getElementById("filters").style.visibility = "visible";
           visible = false;
         } else if (visible == false) {
-          document.getElementById("filters").style.visibility = "hidden";   
+          document.getElementById("filters").style.visibility = "hidden";
           visible = true;
         }
       }

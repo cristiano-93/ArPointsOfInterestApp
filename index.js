@@ -4,24 +4,6 @@ import "aframe-look-at-component";
 import "aframe-osm-3d";
 import "aframe-mouse-cursor-component";
 
-// Questions
-// is this needed 'const url = new URL...' in serviceworker.js
-// ask Nick what exactly should we be doing with indexeddb
-//
-// Notes
-//
-// improve the text names
-//
-// test the arjs-look-controls smoothing factor
-//
-// add attribution???
-//<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-//
-//
-// To Do
-// report
-// add atributions to report and code commented
-//
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
@@ -53,7 +35,6 @@ AFRAME.registerComponent("poifinder", {
       }
     });
 
-    // This event will fire when the OSM data has been downloaded.
     this.el.addEventListener("osm-data-loaded", (e) => {
       console.log("osm data loaded");
 

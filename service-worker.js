@@ -1,7 +1,7 @@
 const CACHE_NAME = "cache";
 const urlsToCache = [
-  //"index.html",
-  //"dist/bundle.js"
+  "index.html",
+  "dist/bundle.js"
 ];
 
 self.addEventListener("install", (ev) => {
@@ -20,7 +20,7 @@ self.addEventListener("activate", (ev) => {
 });
 
 self.addEventListener("fetch", (ev) => {
-  //console.log(`Service worker intercepted: ${ev.request.url}`);
+  console.log(`Service worker intercepted: ${ev.request.url}`);
   const url = new URL(ev.request.url);
 
   ev.respondWith(
@@ -28,10 +28,7 @@ self.addEventListener("fetch", (ev) => {
       if (res) {
         return res;
       }
-
-      // If it's not in the cache, check the URL
       if (ev.request.url.indexOf("/webapp/map") != -1) {
-        // If it's a web API URL, fetch the response AND cache it
         return fetch(ev.request).then((res2) => {
           console.log("Caching as matches pattern");
           return caches.open(CACHE_NAME).then((cache) => {
@@ -39,7 +36,6 @@ self.addEventListener("fetch", (ev) => {
             return res2;
           });
         });
-        // If not, simply fetch the response
       } else {
         return fetch(ev.request);
       }
